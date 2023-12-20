@@ -37,6 +37,33 @@
   padding: 2em;
 }
 
+.boxes {
+  /* display: flex; */
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  display: inline-block;
+}
+.boxes div {
+  display: inline-block;
+}
+.box {
+  /* background-color: gray; */
+  width: 200px;
+  height: 200px;
+  margin: 1%;
+  padding: 1%;
+  /* border-radius: 20px; */
+}
+.box:hover {
+  filter: brightness(0.5);
+}
+.box {
+  background-image: url("https://images.pexels.com/photos/12458104/pexels-photo-12458104.jpeg") !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .read-the-docs {
   color: #888;
 }
