@@ -1,12 +1,22 @@
 [
-    {
-        "id": 0,
-        "imageName": "Test",
-        "url": "https://images.pexels.com/photos/12458104/pexels-photo-12458104.jpeg"
-    },
-    {
-        "id": 1703182914795,
-        "url": "https://images.pexels.com/photos/19567571/pexels-photo-19567571/free-photo-of-a-bride-and-groom-standing-in-the-grass-at-sunset.jpeg",
-        "imageName": "Elif"
-    }
+  {
+    "id": 0,
+    "imageName": "Test",
+    "url": "https://images.pexels.com/photos/12458104/pexels-photo-12458104.jpeg"
+  },
+  {
+    "id": 1703182914795,
+    "url": "https://images.pexels.com/photos/19567571/pexels-photo-19567571/free-photo-of-a-bride-and-groom-standing-in-the-grass-at-sunset.jpeg",
+    "imageName": "Elif"
+  },
+  {
+    "id": 1703183457806,
+    "url": "https://images.pexels.com/photos/19430803/pexels-photo-19430803/free-photo-of-a-close-up-of-a-wave-crashing-into-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imageName": "water"
+  },
+  {
+    "id": 1703183558870,
+    "url": "https://images.pexels.com/photos/18111484/pexels-photo-18111484/free-photo-of-red-telephone-box.jpeg",
+    "imageName": "phone"
+  }
 ]

@@ -35,12 +35,32 @@ function App() {
       })
     }).then(async (response) => {
       const json = await response.json()
-      images.push({ id: json.id, imageName, url })
-      setImages(images)
+      setImages(images.concat({ id: json.id, imageName, url: imageURL }))
     }).catch((error) => {
       console.error(error)
     })
 
+  }
+
+  async function deleteImage(id) {
+    if (confirm('Are you sure you want to delete the image?')) {
+      fetch('http://localhost:3000/delete', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', // Set the Content-Type header
+        },
+        body: JSON.stringify({
+          id: id
+        })
+      }).then(async (response) => {
+        const json = await response.json()
+        setImages(images.filter((e) => e.id !== id))
+        alert('OK, image was deleted :(')
+      }).catch((error) => {
+        console.error(error)
+        alert('Delete failed!!')
+      })
+    }
   }
 
   return (
@@ -58,7 +78,7 @@ function App() {
         <div className="boxes">
           {
             images.map((entry) =>
-              <div className='box' style={{ backgroundImage: `url(${entry.url})` }}>
+              <div onClick={() => deleteImage(entry.id)} className='box' style={{ backgroundImage: `url(${entry.url})` }} id={entry.id}>
                 {entry.imageName}
               </div>
             )
@@ -70,6 +90,7 @@ function App() {
       </p>
       <p>
         <button onClick={addImage}>Add Image To Gallery</button>
+        {/* <button onClick={deleteImage}>Delete Image From Gallery</button> */}
       </p>
     </>
   )
