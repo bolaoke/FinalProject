@@ -63,25 +63,31 @@ function App() {
     }
   }
 
+  function openImage(url) {
+    window.open(url, '_blank')
+  }
+
   return (
     <>
       <div>
         <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+
         </a>
       </div>
+      <img src={reactLogo} className="logo react" alt="React logo" />
       <h1>Gallery</h1>
+      {/* <p><img src={viteLogo} className="logo" alt="Vite logo" /><span style={{ fontSize: 18, fontWeight: 'bold', verticalAlign: 'middle', paddingTop: '-200px' }}>Gallery</span></p> */}
       <div className="card">
         <div className="boxes">
           {
             images.map((entry) =>
               <div style={{ textAlign: 'center' }}>
-                <div onClick={() => deleteImage(entry.id)} className='box' style={{ backgroundImage: `url(${entry.url})` }} id={entry.id}>
+                <div title='Open image in new tab' onClick={() => openImage(entry.url)} className='box' style={{ backgroundImage: `url(${entry.url})`, cursor: 'pointer' }} id={entry.id}>
                 </div>
-                <span>{entry.imageName}</span>
+                <div title='Delete image' style={{ cursor: 'pointer', paddingBottom: 8 }} onClick={() => deleteImage(entry.id)}>{entry.imageName} &bull; 🗑️</div>
               </div>
             )
           }
