@@ -20,6 +20,29 @@ function App() {
     })
   }, [])
 
+  async function addImage() {
+    const imageName = prompt(`What do you want to call the new image?`)
+    const imageURL = prompt(`What's the direct link to the image?`)
+    console.log('Would add', imageName, imageURL)
+    fetch('http://localhost:3000/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // Set the Content-Type header
+      },
+      body: JSON.stringify({
+        imageName: imageName,
+        url: imageURL
+      })
+    }).then(async (response) => {
+      const json = await response.json()
+      images.push({ id: json.id, imageName, url })
+      setImages(images)
+    }).catch((error) => {
+      console.error(error)
+    })
+
+  }
+
   return (
     <>
       <div>
@@ -40,16 +63,13 @@ function App() {
               </div>
             )
           }
-          {/* <div className='box box-a'>X</div>
-          <div className='box'>Y</div>
-          <div className='box'>Z</div>
-          <div className='box'>X</div>
-          <div className='box'>Y</div>
-          <div className='box'>Z</div> */}
         </div>
       </div>
       <p className="read-the-docs">
         Upload an image to the Gallery!
+      </p>
+      <p>
+        <button onClick={addImage}>Add Image To Gallery</button>
       </p>
     </>
   )

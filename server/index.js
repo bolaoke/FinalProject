@@ -16,7 +16,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*'); // Allow all origins
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Allow specific HTTP methods
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'); // Allow specific headers
-  
+
     // Allow cookies and credentials to be sent
     res.header('Access-Control-Allow-Credentials', 'true');
 
@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
 
 // Route to add an image
 app.post('/add', (req, res) => {
+    console.log('ADD REQUEST BODY', req.body)
     const { url, imageName } = req.body;
 
     // Generate a unique ID (you can use UUID or any other method)

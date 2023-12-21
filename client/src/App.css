@@ -59,7 +59,7 @@
   filter: brightness(0.5);
 }
 .box {
-  background-image: url("https://images.pexels.com/photos/12458104/pexels-photo-12458104.jpeg") !important;
+  /* background-image: url("https://images.pexels.com/photos/12458104/pexels-photo-12458104.jpeg") !important; */
   background-size: contain;
   background-repeat: no-repeat;
 }
