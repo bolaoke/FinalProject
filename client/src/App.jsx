@@ -83,8 +83,8 @@ function App() {
       <div className="card">
         <div className="boxes">
           {
-            images.map((entry) =>
-              <div style={{ textAlign: 'center' }}>
+            images.map((entry, ix) =>
+              <div key={ix} style={{ textAlign: 'center' }}>
                 <div title='Open image in new tab' onClick={() => openImage(entry.url)} className='box' style={{ backgroundImage: `url(${entry.url})`, cursor: 'pointer' }} id={entry.id}>
                 </div>
                 <div title='Delete image' style={{ cursor: 'pointer', paddingBottom: 8 }} onClick={() => deleteImage(entry.id)}>{entry.imageName} &bull; 🗑️</div>
