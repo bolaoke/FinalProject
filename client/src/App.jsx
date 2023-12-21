@@ -78,8 +78,10 @@ function App() {
         <div className="boxes">
           {
             images.map((entry) =>
-              <div onClick={() => deleteImage(entry.id)} className='box' style={{ backgroundImage: `url(${entry.url})` }} id={entry.id}>
-                {entry.imageName}
+              <div style={{ textAlign: 'center' }}>
+                <div onClick={() => deleteImage(entry.id)} className='box' style={{ backgroundImage: `url(${entry.url})` }} id={entry.id}>
+                </div>
+                <span>{entry.imageName}</span>
               </div>
             )
           }

@@ -39,9 +39,9 @@
 
 .boxes {
   /* display: flex; */
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
+  /* margin-left: 5%; */
+  /* margin-right: 5%; */
+  /* width: 80%; */
   display: inline-block;
 }
 .boxes div {
@@ -49,19 +49,37 @@
 }
 .box {
   /* background-color: gray; */
-  width: 200px;
-  height: 200px;
+  width: 30vw;
+  height: 30vw;
+  /* min-width: 160px; */
+  /* min-height: 160px; */
   margin: 1%;
-  padding: 1%;
+  /* padding: 1%; */
   /* border-radius: 20px; */
 }
 .box:hover {
   filter: brightness(0.5);
 }
+@media (max-width: 801px) {
+  .boxes {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .box {
+    width: 80vw;
+    height: 80vw;
+    margin: 0;
+    padding-left: 0;
+  }
+}
+
 .box {
   /* background-image: url("https://images.pexels.com/photos/12458104/pexels-photo-12458104.jpeg") !important; */
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+  /* background-color: red; */
 }
 
 .read-the-docs {
